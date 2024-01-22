@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: django-db-signals
+Version: 0.1.1
+Summary: Django database signals (pre/post commit/rollback).
+Home-page: https://github.com/bradleyayers/django-db-signals
+Author: Bradley Ayers
+Author-email: bradley.ayers@gmail.com
+License: Simplified BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Topic :: Database
