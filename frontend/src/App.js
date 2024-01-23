@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
-import ProtectedScreen from './screens/ProctectedScreen'
+import ProtectedScreen from './screens/ProtectedScreen'
 
 import Header from './components/Header'
 import ProfileScreen from './screens/ProfileScreen'
