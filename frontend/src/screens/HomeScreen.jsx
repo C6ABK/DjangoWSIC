@@ -30,6 +30,7 @@ function HomeScreen() {
                             <li>"Card" library</li>
                             <li>"Container" library</li>
                             <li>Django null authentication</li>
+                            <li>Update profile confirmation message</li>
                         </ul>
                     </Card>
                 </div>
