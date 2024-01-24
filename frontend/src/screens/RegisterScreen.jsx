@@ -5,7 +5,7 @@ import { register } from '../actions/userActions'
 
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import Container from '../components/Container'
+import { ThinContainer } from '../components/Containers'
 import Card from '../components/Card'
 import { TextBoxR, SubmitButton } from '../components/FormControls'
 
@@ -40,7 +40,7 @@ function RegisterScreen() {
     }
 
     return (
-        <Container>
+        <ThinContainer>
             <Card>
                 {loading ? <Loader /> :
                     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -106,7 +106,7 @@ function RegisterScreen() {
                     </div>
                 }
             </Card>
-        </Container>
+        </ThinContainer>
     )
 }
 

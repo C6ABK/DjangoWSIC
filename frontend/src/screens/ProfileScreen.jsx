@@ -6,7 +6,7 @@ import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import Container from '../components/Container'
+import { ThinContainer } from '../components/Containers'
 import Card from '../components/Card'
 import { TextBox, TextBoxR, SubmitButton } from '../components/FormControls'
 
@@ -62,7 +62,7 @@ function ProfileScreen({ history }) {
     }
 
     return (
-        <Container>
+        <ThinContainer>
             <Card>
                 {loading ? <Loader /> : 
                     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -123,7 +123,7 @@ function ProfileScreen({ history }) {
                     </div>
                 }
             </Card>
-        </Container>
+        </ThinContainer>
     )
 }
 
