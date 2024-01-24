@@ -26,7 +26,6 @@ function HomeScreen() {
 
                     <Card title="Things to do...">
                         <ul className="list-disc pl-6">
-                            <li>"Message" library</li>
                             <li>Django null authentication</li>
                             <li>Update profile confirmation message</li>
                         </ul>
