@@ -5,7 +5,7 @@ import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 import Loader from '../components/Loader'
-import Message from '../components/Message'
+import { Error } from '../components/Message'
 import { ThinContainer } from '../components/Containers'
 import Card from '../components/Card'
 import { TextBox, TextBoxR, SubmitButton } from '../components/FormControls'
@@ -72,8 +72,8 @@ function ProfileScreen({ history }) {
                             </h2>
                         </div>
 
-                        {message && <Message>{message}</Message>}
-                        {error && <Message>{error}</Message>}
+                        {message && <Error>{message}</Error>}
+                        {error && <Error>{error}</Error>}
 
                         {success && <p>Success</p>}
 

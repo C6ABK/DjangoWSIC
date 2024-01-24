@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { register } from '../actions/userActions'
 
 import Loader from '../components/Loader'
-import Message from '../components/Message'
+import { Error } from '../components/Message'
 import { ThinContainer } from '../components/Containers'
 import Card from '../components/Card'
 import { TextBoxR, SubmitButton } from '../components/FormControls'
@@ -55,8 +55,8 @@ function RegisterScreen() {
                             </h2>
                         </div>
 
-                        {message && <Message>{message}</Message>}
-                        {error && <Message>{error}</Message>}
+                        {message && <Error>{message}</Error>}
+                        {error && <Error>{error}</Error>}
 
                         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                             <form className="space-y-4" onSubmit={submitHandler}>

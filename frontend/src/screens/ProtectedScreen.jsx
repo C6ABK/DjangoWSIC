@@ -7,6 +7,8 @@ import Card from '../components/Card'
 import Stats from '../components/Stats'
 import { Page, Section } from '../components/Headings'
 
+import { Error, Success, Info } from '../components/Message'
+
 function ProctectedScreen() {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
@@ -28,6 +30,9 @@ function ProctectedScreen() {
                         <Section title="Section Title" description="Blanditiis nostrum consectetur sint delectus culpa doloremque. Rerum tempore mollitia, provident laborum magni expedita corrupti obcaecati asperiores eum, voluptatibus assumenda autem quis." />
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis nostrum consectetur sint delectus culpa doloremque. Rerum tempore mollitia, provident laborum magni expedita corrupti obcaecati asperiores eum, voluptatibus assumenda autem quis.
                         <Stats />
+                        <Error>This is an error message</Error>
+                        <Success>This is a success message</Success>
+                        <Info>This is an information message</Info>
                     </Card>
                 </Sidebar>
             }

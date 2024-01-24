@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Loader from '../components/Loader'
-import Message from '../components/Message'
+import { Error } from '../components/Message'
 import { ThinContainer } from '../components/Containers'
 import Card from '../components/Card'
 import { TextBoxR, SubmitButton } from '../components/FormControls'
@@ -47,7 +47,7 @@ function LoginScreen() {
                             </h2>
                         </div>
 
-                        {error && <Message>{error}</Message>}
+                        {error && <Error>{error}</Error>}
 
                         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                             <form className="space-y-6" onSubmit={submitHandler}>
