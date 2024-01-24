@@ -14,18 +14,25 @@ import {
 } from '@heroicons/react/24/outline'
 
 import { useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { logout } from '../actions/userActions'
  
-export default function Sidebar() {
+export default function Sidebar({children, userInfo}) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const logoutHandler = () => {
         dispatch(logout())
     }
+
+    useEffect(() => {
+        if (!userInfo) {
+            navigate("/login")
+        }
+    }, [navigate, userInfo])
 
   return (
     <>
@@ -133,7 +140,7 @@ export default function Sidebar() {
                                     <li>
                                         <NavLink to="/updateProfile" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                                             <UserCircleIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            Tom Cook
+                                            {userInfo.first_name} {userInfo.last_name}
                                         </NavLink>
                                     </li>
 
@@ -217,7 +224,7 @@ export default function Sidebar() {
                         <NavLink to="/updateProfile" className="flex items-center gap-x-4 px-6 py-3 group text-sm font-semibold leading-6 text-gray-700 hover:text-blue-600 hover:bg-gray-50">
                             <UserCircleIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/> 
                             <span className="sr-only">Your profile</span>
-                            <span aria-hidden="true">Tom Cook</span>
+                            <span aria-hidden="true">{userInfo.first_name} {userInfo.last_name}</span>
                         </NavLink>
 
                         <NavLink onClick={logoutHandler} className="flex items-center gap-x-4 px-6 py-3 group text-sm font-semibold leading-6 text-gray-700 hover:text-blue-600 hover:bg-gray-50">
@@ -245,8 +252,8 @@ export default function Sidebar() {
                 </button>
             </div>
 
-            <main className="py-10 lg:pl-72">
-                <div className="px-4 sm:px-6 lg:px-8">{/* Your content */}</div>
+            <main className="py-8 lg:pl-72">
+                <div className="px-4 sm:px-6 lg:px-8">{children}</div>
             </main>
         </div>
     </>
