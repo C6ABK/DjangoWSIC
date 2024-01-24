@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 import Sidebar from '../components/Sidebar'
 import Card from '../components/Card'
+import PageHeading from '../components/PageHeading'
 
 function ProctectedScreen() {
     const userLogin = useSelector(state => state.userLogin)
@@ -22,6 +23,7 @@ function ProctectedScreen() {
             {userInfo && 
                 <Sidebar userInfo={userInfo}>
                     <Card>
+                        <PageHeading>Title of the Page</PageHeading>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis nostrum consectetur sint delectus culpa doloremque. Rerum tempore mollitia, provident laborum magni expedita corrupti obcaecati asperiores eum, voluptatibus assumenda autem quis.
                     </Card>
                 </Sidebar>
