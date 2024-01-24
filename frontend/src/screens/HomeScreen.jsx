@@ -14,11 +14,14 @@ function HomeScreen() {
                         </div>
                     </div>
 
-                    <Card title="Adam Bark's Django-React Template">
-                        <p>
-                            Django React template with authentication. Run pip install -r requirements.txt in the backend folder and npm install in the frontend folder to begin.
-                        </p>
-                        <p>Create super user.</p>
+                    <Card title="Adam Bark's Django React Template with authentication">
+                        <ul className="list-disc pl-6">
+                            <li>Run pip install -r requirements.txt in the backend folder.</li>
+                            <li>Python manage.py migrate</li>
+                            <li>Python manage.py createsuperuser</li>
+                            <li>Python manage.py runserver 0.0.0.0:8000 (include address for codeanywhere)</li>
+                            <li>Run npm install in the frontend folder.</li>
+                        </ul>
                     </Card>
                 </div>
             </Container>
