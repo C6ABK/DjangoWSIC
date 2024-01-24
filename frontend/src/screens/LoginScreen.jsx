@@ -6,7 +6,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Container from '../components/Container'
 import Card from '../components/Card'
-import { TextBox, SubmitButton } from '../components/FormControls'
+import { TextBoxR, SubmitButton } from '../components/FormControls'
 
 import { login } from '../actions/userActions'
 
@@ -51,15 +51,15 @@ function LoginScreen() {
 
                         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                             <form className="space-y-6" onSubmit={submitHandler}>
-                                <TextBox 
+                                <TextBoxR 
                                     type={'text'}
-                                    name={'Email!!'}
+                                    name={'Email'}
                                     id={'email'}
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
 
-                                <TextBox 
+                                <TextBoxR 
                                     type={'password'}
                                     name={'Password'}
                                     id={'password'}
@@ -67,7 +67,7 @@ function LoginScreen() {
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
 
-                                <SubmitButton type={'submit'} text={'Sign In!'} />
+                                <SubmitButton type={'submit'} text={'Sign In'} />
                             </form>
                         </div>
                     </div>
