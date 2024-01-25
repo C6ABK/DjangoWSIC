@@ -23,12 +23,6 @@ function HomeScreen() {
                             <li>Run npm install in the frontend folder.</li>
                         </ul>
                     </Card>
-
-                    <Card title="Things to do...">
-                        <ul className="list-disc pl-6">
-                            <li>Update profile confirmation message</li>
-                        </ul>
-                    </Card>
                 </div>
             </ThinContainer>
         </>
