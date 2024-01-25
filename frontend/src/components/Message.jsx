@@ -1,6 +1,8 @@
 import { ExclamationTriangleIcon, CheckCircleIcon, InformationCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import { Fragment, useState } from 'react'
 import { Transition } from '@headlessui/react'
+import { useDispatch } from 'react-redux'
+import { HIDE_UPDATE_MESSAGE } from '../constants/userConstants'
 
 export function Error({ children }) {
     return (
@@ -61,13 +63,18 @@ export function Info({ children }) {
 }
   
 export function SuccessNotification({children, ...props}) {
-  const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true)
+    const dispatch = useDispatch()
+
+    setTimeout(() => {
+        dispatch({ type: HIDE_UPDATE_MESSAGE })
+    }, 5000)
 
   return (
     <>
       {/* Global notification live region, render this permanently at the end of the document */}
       <div
-        aria-live="assertive"
+        aria-live="off"
         className="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6"
       >
         <div className="flex w-full flex-col items-center space-y-4 sm:items-end">

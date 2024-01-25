@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
-import { USER_UPDATE_PROFILE_RESET, HIDE_UPDATE_MESSAGE } from '../constants/userConstants'
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 import Loader from '../components/Loader'
 import { Error, SuccessNotification } from '../components/Message'
@@ -38,9 +38,9 @@ function ProfileScreen() {
                 dispatch({ type: USER_UPDATE_PROFILE_RESET })
                 dispatch(getUserDetails('profile'))
             } else {
-                setFirst_name(user.first_name)
-                setLast_name(user.last_name)
-                setEmail(user.email)
+                setFirst_name(userInfo.first_name)
+                setLast_name(userInfo.last_name)
+                setEmail(userInfo.email)
             }
         }
     }, [dispatch, navigate, userInfo, user, success])
@@ -59,10 +59,6 @@ function ProfileScreen() {
             }))
             setMessage('')
         }
-
-        setTimeout(() => {
-            dispatch({ type: HIDE_UPDATE_MESSAGE })
-        }, 5000)
     }
 
     return (

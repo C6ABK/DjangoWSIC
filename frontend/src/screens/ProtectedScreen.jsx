@@ -6,10 +6,7 @@ import Sidebar from '../components/Sidebar'
 import Card from '../components/Card'
 import Stats from '../components/Stats'
 import { Page, Section } from '../components/Headings'
-
-import { Error, Success, Info, SuccessNotification } from '../components/Message'
-
-import Timer from '../components/Timer'
+import { Error, Success, Info } from '../components/Message'
 
 function ProctectedScreen() {
     const userLogin = useSelector(state => state.userLogin)
@@ -35,8 +32,6 @@ function ProctectedScreen() {
                         <Error>This is an error message</Error>
                         <Success>This is a success message</Success>
                         <Info>This is an information message</Info>
-                        <SuccessNotification>Profile Updated</SuccessNotification>
-                        <Timer>Timer component</Timer>
                     </Card>
                 </Sidebar>
             }

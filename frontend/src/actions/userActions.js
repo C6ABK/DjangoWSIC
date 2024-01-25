@@ -14,7 +14,7 @@ import {
     USER_UPDATE_PROFILE_REQUEST,
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_FAIL,
-    SHOW_UPDATE_MESSAGE,
+    SHOW_UPDATE_MESSAGE
 } from '../constants/userConstants'
 
 export const updateUserProfile = (user) => async (dispatch, getState) => {
