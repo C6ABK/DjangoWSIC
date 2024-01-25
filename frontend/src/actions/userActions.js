@@ -14,6 +14,7 @@ import {
     USER_UPDATE_PROFILE_REQUEST,
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_FAIL,
+    SHOW_UPDATE_MESSAGE,
 } from '../constants/userConstants'
 
 export const updateUserProfile = (user) => async (dispatch, getState) => {
@@ -40,13 +41,17 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
         )
 
         dispatch({
+            type: USER_LOGIN_SUCCESS,
+            payload: data
+        })
+
+        dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,
             payload: data
         })
 
         dispatch({
-            type: USER_LOGIN_SUCCESS,
-            payload: data
+            type: SHOW_UPDATE_MESSAGE
         })
 
         localStorage.setItem('userInfo', JSON.stringify(data))

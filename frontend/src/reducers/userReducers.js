@@ -13,7 +13,9 @@ import {
     USER_UPDATE_PROFILE_REQUEST,
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_FAIL,
-    USER_UPDATE_PROFILE_RESET
+    USER_UPDATE_PROFILE_RESET,
+    SHOW_UPDATE_MESSAGE,
+    HIDE_UPDATE_MESSAGE
 } from '../constants/userConstants'
 
 export const userUpdateProfileReducer = (state = { user: {} }, action) => {
@@ -29,6 +31,12 @@ export const userUpdateProfileReducer = (state = { user: {} }, action) => {
 
         case USER_UPDATE_PROFILE_RESET:
             return { user: {} }
+
+        case SHOW_UPDATE_MESSAGE:
+            return { showMsg: true }
+
+        case HIDE_UPDATE_MESSAGE:
+            return { showMsg: false }
 
         default:
             return state
