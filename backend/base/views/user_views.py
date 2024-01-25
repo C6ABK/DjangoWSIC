@@ -50,6 +50,21 @@ def updateUserProfile(request):
 @api_view(["POST"])
 def registerUser(request):
     data = request.data
+
+    try:
+        if data['first_name'] == "":
+            raise Exception
+        if data['last_name'] == "":
+            raise Exception
+        if data['email'] == "":
+            raise Exception
+        if data['password'] == "":
+            raise Exception
+    except Exception as e:
+        print(e)
+        message = {'detail':'Required fields not completed'}
+        return Response(message, status=status.HTTP_400_BAD_REQUEST)
+
     try:
         user = User.objects.create(
             first_name=data['first_name'],

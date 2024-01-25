@@ -60,7 +60,7 @@ function RegisterScreen() {
 
                         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                             <form className="space-y-4" onSubmit={submitHandler}>
-                                <TextBoxR 
+                                <TextBoxR
                                     type={'text'}
                                     name={'First Name'}
                                     id={'first_name'}
@@ -68,7 +68,7 @@ function RegisterScreen() {
                                     onChange={(e) => setFname(e.target.value)}
                                 />
 
-                                <TextBoxR 
+                                <TextBoxR
                                     type={'text'}
                                     name={'Last Name'}
                                     id={'last_name'}
