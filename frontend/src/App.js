@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
-import ProtectedScreen from './screens/ProtectedScreen'
+import Dashboard from './screens/Dashboard'
+import Teams from './screens/Teams'
 
 import Header from './components/Header'
 import ProfileScreen from './screens/ProfileScreen'
@@ -19,7 +20,8 @@ function App() {
                     <Route path="/" element={<HomeScreen />} />
                     <Route path="/login" element={<LoginScreen />} />
                     <Route path="/register" element={<RegisterScreen />} />
-                    <Route path="/protectedScreen" element={<ProtectedScreen />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/teams" element={<Teams />} />
                     <Route path="/updateProfile" element={<ProfileScreen />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

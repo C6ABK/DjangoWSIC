@@ -2,10 +2,6 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
-  CalendarIcon,
-  ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
   HomeIcon,
   UsersIcon,
   XMarkIcon,
@@ -17,6 +13,7 @@ import { useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { logout } from '../actions/userActions'
+import SideBarLink from '../components/SideBarLink'
  
 export default function Sidebar({children, userInfo}) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -90,48 +87,18 @@ export default function Sidebar({children, userInfo}) {
                         <nav className="flex flex-1 flex-col">
                             <ul className="flex flex-1 flex-col gap-y-7 justify-between">
                             <li>
-                                <ul className="-mx-2 space-y-1">
-                                    <li>
-                                        <NavLink to="/" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <HomeIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            Dashboard
-                                        </NavLink>
-                                    </li>
+                                <ul className="-mx-2 space-y-1"> 
+                                    <SideBarLink 
+                                        icon={<HomeIcon />}
+                                        text={"Dashboard"}
+                                        to={"/dashboard"}
+                                    />
 
-                                    <li>
-                                        <NavLink to="/" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <UsersIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            Team
-                                        </NavLink>
-                                    </li>
-
-                                    <li>
-                                        <NavLink to="/" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <FolderIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            Projects
-                                        </NavLink>
-                                    </li>
-
-                                    <li>
-                                        <NavLink to="/" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <CalendarIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            Calendar
-                                        </NavLink>
-                                    </li>
-
-                                    <li>
-                                        <NavLink to="/" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <DocumentDuplicateIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            Documents
-                                        </NavLink>
-                                    </li>
-
-                                    <li>
-                                        <NavLink to="/" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <ChartPieIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            Reports
-                                        </NavLink>
-                                    </li>
+                                    <SideBarLink 
+                                        icon={<UsersIcon />}
+                                        text={"Teams"}
+                                        to={"/teams"}
+                                    />
                                 </ul>
                             </li>
 
@@ -176,47 +143,18 @@ export default function Sidebar({children, userInfo}) {
                     <ul className="flex flex-1 flex-col gap-y-7">
                     <li>
                         <ul className="-mx-2 space-y-1">
-                            <li>
-                                <NavLink to="/" className='text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'>
-                                    <HomeIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/>
-                                    Dashboard
-                                </NavLink>
-                            </li>
+                            
+                            <SideBarLink 
+                                icon={<HomeIcon />}
+                                text={"Dashboard"}
+                                to={"/dashboard"}
+                            />
 
-                            <li>
-                                <NavLink to="/" className='text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'>
-                                    <UsersIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/>
-                                    Team
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to="/" className='text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'>
-                                    <FolderIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/>
-                                    Projects
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to="/" className='text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'>
-                                    <CalendarIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/>
-                                    Calendar
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to="/" className='text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'>
-                                    <DocumentDuplicateIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/>
-                                    Documents
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to="/" className='text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'>
-                                    <ChartPieIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/>
-                                    Reports
-                                </NavLink>
-                            </li>
+                            <SideBarLink 
+                                icon={<UsersIcon />}
+                                text={"Teams"}
+                                to={"/teams"}
+                            />
                         </ul>
                     </li>
                     
