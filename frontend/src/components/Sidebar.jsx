@@ -190,8 +190,8 @@ export default function Sidebar({children, userInfo}) {
                 </button>
             </div>
 
-            <main className="py-8 lg:pl-72">
-                <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+            <main className="py-2 sm:py-4 lg:py-4 lg:pl-72">
+                <div className="px-2 sm:px-4 lg:px-4">{children}</div>
             </main>
         </div>
     </>
