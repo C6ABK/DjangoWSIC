@@ -18,6 +18,7 @@ function Teams() {
         if (!userInfo) {
             navigate("/login")
         }
+        document.title = "Teams"
     }, [navigate, userInfo])
 
     return (

@@ -3,7 +3,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
   HomeIcon,
-  UsersIcon,
+  MagnifyingGlassIcon,
+  PresentationChartLineIcon,
   XMarkIcon,
   UserCircleIcon,
   ArrowRightEndOnRectangleIcon,
@@ -88,6 +89,7 @@ export default function Sidebar({children, userInfo}) {
                             <ul className="flex flex-1 flex-col gap-y-7 justify-between">
                             <li>
                                 <ul className="-mx-2 space-y-1"> 
+
                                     <SideBarLink 
                                         icon={<HomeIcon />}
                                         text={"Dashboard"}
@@ -95,10 +97,17 @@ export default function Sidebar({children, userInfo}) {
                                     />
 
                                     <SideBarLink 
-                                        icon={<UsersIcon />}
-                                        text={"Teams"}
+                                        icon={<PresentationChartLineIcon />}
+                                        text={"Short Interval Control"}
                                         to={"/teams"}
                                     />
+
+                                    <SideBarLink 
+                                        icon={<MagnifyingGlassIcon />}
+                                        text={"Root Cause Problem Solving"}
+                                        to={"/teams"}
+                                    />
+                                    
                                 </ul>
                             </li>
 
@@ -151,10 +160,17 @@ export default function Sidebar({children, userInfo}) {
                             />
 
                             <SideBarLink 
-                                icon={<UsersIcon />}
-                                text={"Teams"}
+                                icon={<PresentationChartLineIcon />}
+                                text={"Short Interval Control"}
                                 to={"/teams"}
                             />
+
+                            <SideBarLink 
+                                icon={<MagnifyingGlassIcon />}
+                                text={"Root Cause Problem Solving"}
+                                to={"/teams"}
+                            />
+
                         </ul>
                     </li>
                     

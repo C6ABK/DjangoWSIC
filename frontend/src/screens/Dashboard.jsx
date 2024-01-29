@@ -18,6 +18,7 @@ function Dashboard() {
         if (!userInfo) {
             navigate("/login")
         }
+        document.title = "Dashboard"
     }, [navigate, userInfo])
 
     return (
