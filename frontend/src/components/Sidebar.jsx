@@ -80,8 +80,8 @@ export default function Sidebar({children, userInfo}) {
                         <div className="flex h-16 shrink-0 items-center">
                             <img
                                 className="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600"
-                                alt="Your Company"
+                                src="/images/WarburtonsSmall.png"
+                                alt="Warburtons"
                             />
                         </div>
                         <nav className="flex flex-1 flex-col">
@@ -135,8 +135,8 @@ export default function Sidebar({children, userInfo}) {
                 <div className="flex h-16 shrink-0 items-center">
                     <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600"
-                        alt="Your Company"
+                        src="/images/WarburtonsSmall.png"
+                        alt="Warburtons"
                     />
                 </div>
                 <nav className="flex flex-1 flex-col">
@@ -180,8 +180,8 @@ export default function Sidebar({children, userInfo}) {
             <div className="sticky top-0 z-40 flex justify-between items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
                 <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600"
-                    alt="Your Company"
+                    src="/images/WarburtonsSmall.png"
+                    alt="Warburtons"
                 />
 
                 <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden" onClick={() => setSidebarOpen(true)}>

@@ -30,8 +30,8 @@ export default function Navbar() {
                             <div className="flex flex-shrink-0 items-center">
                                 <img
                                 className="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600"
-                                alt="Your Company"
+                                src="/images/WarburtonsSmall.png"
+                                alt="Warburtons"
                                 />
                             </div>
 
