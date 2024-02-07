@@ -7,7 +7,6 @@ export default function Header() {
 
     // Render the normal navbar for these routes only
     let renderNav = 
-        (pathname === "/") || 
         (pathname === "/login") ||
         (pathname === "/register") ||
         (pathname === "/updateProfile") 
