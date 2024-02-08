@@ -99,7 +99,7 @@ export default function Sidebar({children, userInfo}) {
                                     <SideBarLink 
                                         icon={<PresentationChartLineIcon />}
                                         text={"Short Interval Control"}
-                                        to={"/teams"}
+                                        to={"/sic"}
                                     />
 
                                     <SideBarLink 
@@ -162,7 +162,7 @@ export default function Sidebar({children, userInfo}) {
                             <SideBarLink 
                                 icon={<PresentationChartLineIcon />}
                                 text={"Short Interval Control"}
-                                to={"/teams"}
+                                to={"/sic"}
                             />
 
                             <SideBarLink 
