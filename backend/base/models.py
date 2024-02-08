@@ -1,30 +1,37 @@
-# from django.db import models
-# from django.contrib.auth.models import User
-# from datetime import timedelta
-# from django.utils import timezone
+from django.db import models
+from django.contrib.auth.models import User
+from datetime import timedelta
+from django.utils import timezone
 
-def tomorrow():
-    return timezone.now() + timedelta(days=1)
+class Site(models.Model):
+    siteName = models.CharField(max_length=200, null=False, blank=False)
+    WCode = models.CharField(max_length=3, null=False, blank=False)
 
-# class Task(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-#     title = models.CharField(max_length=200, null=False, blank=False)
-#     comments = models.CharField(max_length=200, null=True, blank=True)
-#     deadline = models.DateField(auto_now_add=False, default=tomorrow)
-#     review = models.DateField(auto_now_add=False, default=tomorrow)
-#     status = models.BooleanField(null=False, blank=False, default=False)
-#     focus = models.BooleanField(null=False, blank=False, default=False)
-#     persistent = models.BooleanField(null=False, blank=False, default=False)
+    def __str__(self):
+        return self.siteName
 
-#     def __str__(self):
-#         return self.title
+class Status(models.Model):
+    site = models.ForeignKey(Site, on_delete=models.SET_NULL, null=True)
+    statusDescription = models.CharField(max_length=200, null=False, blank=False)
+    statusGroup = models.IntegerField(null=False, blank=False)
+    statusText = models.CharField(max_length=200, null=False, blank=False)
 
-# class Action(models.Model):
-#     taskID = models.ForeignKey(Task, on_delete=models.SET_NULL, null=True)
-#     title = models.CharField(max_length=200, null=False, blank=False)
-#     comments = models.CharField(max_length=200, null=True, blank=True)
-#     status = models.BooleanField(null=False, blank=False, default=False)
-#     focus = models.BooleanField(null=False, blank=False, default=False)
+    def __str__(self):
+        return self.statusText
 
-#     def __str__(self):
-#         return self.title
+class Version(models.Model):
+    version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
+    comments = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+class Change(models.Model):
+    versionID = models.ForeignKey(Version, on_delete=models.SET_NULL, null=True)
+    feature = models.CharField(max_length=200, null=False, blank=False)
+    comments = models.CharField(max_length=200, null=True, blank=True)
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.feature
