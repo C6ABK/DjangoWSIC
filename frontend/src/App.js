@@ -6,6 +6,7 @@ import RegisterScreen from './screens/RegisterScreen'
 import Dashboard from './screens/Dashboard'
 import Teams from './screens/Teams'
 import SICScreen from './screens/SICScreen'
+import Changelog from './screen/Changelog'
 
 import Header from './components/Header'
 import ProfileScreen from './screens/ProfileScreen'
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/register" element={<RegisterScreen />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/sic" element={<SICScreen />} />
+                    <Route path="/changelog" element={<Changelog />} />
                     <Route path="/teams" element={<Teams />} />
                     <Route path="/updateProfile" element={<ProfileScreen />} />
                     <Route path="*" element={<NotFound />} />
