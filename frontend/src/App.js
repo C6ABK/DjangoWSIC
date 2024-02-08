@@ -4,9 +4,9 @@ import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import Dashboard from './screens/Dashboard'
-import Teams from './screens/Teams'
-import SICScreen from './screens/SICScreen'
-import Changelog from './screen/Changelog'
+import SICScreen from './screens/SIC/SICScreen'
+import RCPSScreen from './screens/RCPS/RCPSScreen'
+import Changelog from './screens/Changelog'
 
 import Header from './components/Header'
 import ProfileScreen from './screens/ProfileScreen'
@@ -25,7 +25,7 @@ function App() {
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/sic" element={<SICScreen />} />
                     <Route path="/changelog" element={<Changelog />} />
-                    <Route path="/teams" element={<Teams />} />
+                    <Route path="/rcps" element={<RCPSScreen />} />
                     <Route path="/updateProfile" element={<ProfileScreen />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

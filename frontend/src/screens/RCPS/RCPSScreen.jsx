@@ -2,11 +2,11 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import Sidebar from '../components/Sidebar'
-import Card from '../components/Card'
-import { Page } from '../components/Headings'
+import Sidebar from '../../components/Sidebar'
+import Card from '../../components/Card'
+import { Page } from '../../components/Headings'
 
-function Teams() {
+function RCPSScreen() {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
@@ -16,7 +16,7 @@ function Teams() {
         if (!userInfo) {
             navigate("/login")
         }
-        document.title = "Changelog"
+        document.title = "Root Cause Problem Solving"
     }, [navigate, userInfo])
 
     return (
@@ -24,7 +24,7 @@ function Teams() {
             {userInfo && 
                 <Sidebar userInfo={userInfo}>
                     <Card>
-                        <Page title="Changelog" />
+                        <Page title="Root Cause Problem Solving" />
                         
                     </Card>
                 </Sidebar>
@@ -33,4 +33,4 @@ function Teams() {
     )
 }
 
-export default Teams
+export default RCPSScreen

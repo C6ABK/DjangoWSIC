@@ -8,6 +8,7 @@ import {
   XMarkIcon,
   UserCircleIcon,
   ArrowRightEndOnRectangleIcon,
+  WrenchScrewdriverIcon
 } from '@heroicons/react/24/outline'
 
 import { useEffect } from 'react'
@@ -105,7 +106,13 @@ export default function Sidebar({children, userInfo}) {
                                     <SideBarLink 
                                         icon={<MagnifyingGlassIcon />}
                                         text={"Root Cause Problem Solving"}
-                                        to={"/teams"}
+                                        to={"/rcps"}
+                                    />
+
+                                    <SideBarLink 
+                                        icon={<WrenchScrewdriverIcon />}
+                                        text={"Changelog"}
+                                        to={"/changelog"}
                                     />
                                     
                                 </ul>
@@ -168,7 +175,13 @@ export default function Sidebar({children, userInfo}) {
                             <SideBarLink 
                                 icon={<MagnifyingGlassIcon />}
                                 text={"Root Cause Problem Solving"}
-                                to={"/teams"}
+                                to={"/rcps"}
+                            />
+                            
+                            <SideBarLink 
+                                icon={<WrenchScrewdriverIcon />}
+                                text={"Changelog"}
+                                to={"/changelog"}
                             />
 
                         </ul>

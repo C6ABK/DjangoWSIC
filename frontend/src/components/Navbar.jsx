@@ -36,12 +36,14 @@ export default function Navbar() {
                             </div>
 
                             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                                <NavLink to="/" className={({ isActive }) => isActive ? 
-                                    "inline-flex items-center border-b-2 border-blue-500 px-1 pt-1 text-sm font-medium text-gray-900" : 
-                                    "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700" 
-                                }>
-                                    Home
-                                </NavLink>
+                                {!userInfo && 
+                                    <NavLink to="/" className={({ isActive }) => isActive ? 
+                                        "inline-flex items-center border-b-2 border-blue-500 px-1 pt-1 text-sm font-medium text-gray-900" : 
+                                        "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700" 
+                                    }>
+                                        Home
+                                    </NavLink>
+                                }
                                 {userInfo && 
                                     <>
                                         <NavLink to="/dashboard" className={({ isActive }) => isActive ? 
