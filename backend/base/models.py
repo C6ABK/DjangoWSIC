@@ -18,3 +18,10 @@ class Status(models.Model):
 
     def __str__(self):
         return self.statusText
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    site = models.ForeignKey(Site, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.user.first_name + " " + self.user.last_name
