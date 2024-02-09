@@ -7,7 +7,7 @@ import Loader from '../components/Loader'
 import { Error } from '../components/Message'
 import { ThinContainer } from '../components/Containers'
 import Card from '../components/Card'
-import { TextBoxR, SubmitButton } from '../components/FormControls'
+import { TextBoxR, SubmitButton, Select } from '../components/FormControls'
 
 function RegisterScreen() {
     const [fname, setFname] = useState('')
@@ -45,12 +45,7 @@ function RegisterScreen() {
                 {loading ? <Loader /> :
                     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                            <img
-                                className="mx-auto h-10 w-auto"
-                                src="/images/Warburtons.png"
-                                alt="Warburtons"
-                            />
-                            <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                            <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                                 Register a new account
                             </h2>
                         </div>
@@ -60,20 +55,27 @@ function RegisterScreen() {
 
                         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                             <form className="space-y-4" onSubmit={submitHandler}>
-                                <TextBoxR
-                                    type={'text'}
-                                    name={'First Name'}
-                                    id={'first_name'}
-                                    value={fname}
-                                    onChange={(e) => setFname(e.target.value)}
-                                />
+                                <div className="flex flex-col w-full space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                                    <TextBoxR
+                                        type={'text'}
+                                        name={'First Name'}
+                                        id={'first_name'}
+                                        value={fname}
+                                        onChange={(e) => setFname(e.target.value)}
+                                    />
 
-                                <TextBoxR
-                                    type={'text'}
-                                    name={'Last Name'}
-                                    id={'last_name'}
-                                    value={lname}
-                                    onChange={(e) => setLname(e.target.value)}
+                                    <TextBoxR
+                                        type={'text'}
+                                        name={'Last Name'}
+                                        id={'last_name'}
+                                        value={lname}
+                                        onChange={(e) => setLname(e.target.value)}
+                                    />
+                                </div>
+
+                                <Select 
+                                    name={'Site'}
+                                    id={'site'}
                                 />
 
                                 <TextBoxR 
