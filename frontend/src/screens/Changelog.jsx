@@ -25,7 +25,12 @@ function Teams() {
                 <Sidebar userInfo={userInfo}>
                     <Card>
                         <Page title="Changelog" />
-                        
+                        <ul>
+                            <li>Master</li>
+                            <li>Key Metrics</li>
+                            <li>MG Product, HP KPIs, HP Hourly Count</li>
+                            <li>Loss Data</li>
+                        </ul>
                     </Card>
                 </Sidebar>
             }

@@ -18,20 +18,3 @@ class Status(models.Model):
 
     def __str__(self):
         return self.statusText
-
-class Version(models.Model):
-    version = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False)
-    comments = models.CharField(max_length=200, null=True, blank=True)
-
-    def __str__(self):
-        return self.title
-
-class Change(models.Model):
-    versionID = models.ForeignKey(Version, on_delete=models.SET_NULL, null=True)
-    feature = models.CharField(max_length=200, null=False, blank=False)
-    comments = models.CharField(max_length=200, null=True, blank=True)
-    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    status = models.ForeignKey(Status, on_delete=models.SET_NULL, null=True)
-
-    def __str__(self):
-        return self.feature
