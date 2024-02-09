@@ -6,6 +6,7 @@ import RegisterScreen from './screens/RegisterScreen'
 import Dashboard from './screens/Dashboard'
 import SICScreen from './screens/SIC/SICScreen'
 import RCPSScreen from './screens/RCPS/RCPSScreen'
+import SettingsScreen from './screens/SettingsScreen'
 import Changelog from './screens/Changelog'
 
 import Header from './components/Header'
@@ -26,6 +27,7 @@ function App() {
                     <Route path="/sic" element={<SICScreen />} />
                     <Route path="/changelog" element={<Changelog />} />
                     <Route path="/rcps" element={<RCPSScreen />} />
+                    <Route path="/settings" element={<SettingsScreen />} />
                     <Route path="/updateProfile" element={<ProfileScreen />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

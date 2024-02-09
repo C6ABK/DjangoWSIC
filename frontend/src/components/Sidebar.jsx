@@ -8,7 +8,8 @@ import {
   XMarkIcon,
   UserCircleIcon,
   ArrowRightEndOnRectangleIcon,
-  WrenchScrewdriverIcon
+  WrenchScrewdriverIcon,
+  Cog6ToothIcon
 } from '@heroicons/react/24/outline'
 
 import { useEffect } from 'react'
@@ -110,6 +111,12 @@ export default function Sidebar({children, userInfo}) {
                                     />
 
                                     <SideBarLink 
+                                        icon={<Cog6ToothIcon />}
+                                        text={"Settings"}
+                                        to={"/settings"}
+                                    />
+
+                                    <SideBarLink 
                                         icon={<WrenchScrewdriverIcon />}
                                         text={"Changelog"}
                                         to={"/changelog"}
@@ -178,6 +185,12 @@ export default function Sidebar({children, userInfo}) {
                                 to={"/rcps"}
                             />
                             
+                            <SideBarLink 
+                                icon={<Cog6ToothIcon />}
+                                text={"Settings"}
+                                to={"/settings"}
+                            />
+
                             <SideBarLink 
                                 icon={<WrenchScrewdriverIcon />}
                                 text={"Changelog"}
