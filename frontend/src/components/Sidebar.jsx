@@ -130,7 +130,7 @@ export default function Sidebar({children, userInfo}) {
                                     <li>
                                         <NavLink to="/updateProfile" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                                             <UserCircleIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            {userInfo.first_name} {userInfo.last_name}
+                                            {userInfo.first_name} {userInfo.last_name} {userInfo.staff}
                                         </NavLink>
                                     </li>
 
@@ -185,17 +185,23 @@ export default function Sidebar({children, userInfo}) {
                                 to={"/rcps"}
                             />
                             
-                            <SideBarLink 
-                                icon={<Cog6ToothIcon />}
-                                text={"Settings"}
-                                to={"/settings"}
-                            />
+                            {userInfo.staff && 
+                                <>
+                                    <SideBarLink 
+                                        icon={<Cog6ToothIcon />}
+                                        text={"Settings"}
+                                        to={"/settings"}
+                                    />
 
-                            <SideBarLink 
-                                icon={<WrenchScrewdriverIcon />}
-                                text={"Changelog"}
-                                to={"/changelog"}
-                            />
+                                    <SideBarLink 
+                                        icon={<WrenchScrewdriverIcon />}
+                                        text={"Changelog"}
+                                        to={"/changelog"}
+                                    />
+                                </>
+                            }
+
+                            
 
                         </ul>
                     </li>

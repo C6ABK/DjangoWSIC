@@ -16,6 +16,11 @@ function Settings() {
         if (!userInfo) {
             navigate("/login")
         }
+        
+        if (!userInfo.staff) {
+            navigate("/dashboard")
+        }
+
         document.title = "Settings"
     }, [navigate, userInfo])
 

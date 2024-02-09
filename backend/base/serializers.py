@@ -4,19 +4,24 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Site, Profile
 
 class UserSerializer(serializers.ModelSerializer):
+    staff = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = User
-        fields = ['id', 'username', 'first_name', 'last_name', 'email']
+        fields = ['id', 'username', 'first_name', 'last_name', 'staff', 'email']
 
     def get_id(self, obj):
         return obj.id
+
+    def get_staff(self, obj):
+        return obj.is_staff
 
 class UserSerializerWithToken(UserSerializer):
     token = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'token']
+        fields = ['id', 'username', 'first_name', 'last_name', 'staff', 'email', 'token']
 
     def get_token(self, obj):
         token = RefreshToken.for_user(obj)
