@@ -9,7 +9,7 @@ import { listSites } from '../../actions/settingsActions'
 
 function Sites() {
     const sitesList = useSelector(state => state.sitesList)
-    const { error, loading, sites } = sitesList
+    const { sitesError, sitesLoading, sites } = sitesList
 
     const dispatch = useDispatch()
 
@@ -19,11 +19,11 @@ function Sites() {
 
     return (
       <div className="w-1/4 p-4 border-2 border-gray-200 shadow-xl rounded-xl">
-        {loading ? (
+        {sitesLoading ? (
           <Loader />
         ) : (
           <>
-            {error && <Error>{error}</Error>}
+            {sitesError && <Error>{sitesError}</Error>}
             <div>
               <div className="sm:flex sm:items-center">
                 <div className="sm:flex-auto">
@@ -76,7 +76,7 @@ function Sites() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-200">
-                        {sites.map((sites) => (
+                        {sites?.map((sites) => (
                           <tr key={sites.id}>
                             <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                               {sites.id}

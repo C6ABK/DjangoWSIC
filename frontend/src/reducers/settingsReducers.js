@@ -7,13 +7,13 @@ import {
 export const sitesListReducer = (state = { sites:[] }, action) => {
     switch(action.type){
         case SITES_LOAD_REQUEST:
-            return { loading: true, sites: [] }
+            return { sitesLoading: true, sites: [] }
 
         case SITES_LOAD_SUCCESS:
-            return { loading: false, sites: action.payload }
+            return { sitesLoading: false, sites: action.payload }
 
         case SITES_LOAD_FAIL:
-            return { loading: false, error: action.payload }
+            return { sitesLoading: false, sitesError: action.payload }
 
         default:
             return state
