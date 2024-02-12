@@ -70,7 +70,6 @@ def registerUser(request):
         if data['password'] == "":
             raise Exception
     except Exception as e:
-        print(e)
         message = {'detail':'Required fields not completed'}
         return Response(message, status=status.HTTP_400_BAD_REQUEST)
 
@@ -84,9 +83,11 @@ def registerUser(request):
         )
         serializer = UserSerializerWithToken(user, many=False)
 
+        site = Site.objects.get(id=data['userSite'])
+
         profile = Profile.objects.create(
             user = user,
-            site = data['userSite']
+            site = site
         )
 
         return Response(serializer.data)
