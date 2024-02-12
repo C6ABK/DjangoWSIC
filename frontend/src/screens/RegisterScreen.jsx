@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { register } from '../actions/userActions'
 
 import Loader from '../components/Loader'
-import { Error } from '../components/Message'
+import { Error, SuccessNotification } from '../components/Message'
 import { ThinContainer } from '../components/Containers'
 import Card from '../components/Card'
 import { TextBoxR, SubmitButton } from '../components/FormControls'
@@ -19,6 +19,7 @@ function RegisterScreen() {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState('')
+    const [success, setSuccess] = useState('')
 
     const sitesList = useSelector(state => state.sitesList)
     const { sitesError, sitesLoading, sites } = sitesList
@@ -40,6 +41,16 @@ function RegisterScreen() {
             setMessage('Passwords do not match')
         } else {
             dispatch(register(fname, lname, userSite, email, password))
+
+            // Clear input
+            setFname('')
+            setLname('')
+            setUserSite('')
+            setEmail('')
+            setPassword('')
+            setConfirmPassword('')
+
+            setSuccess(true)
         }
     }
 
@@ -57,6 +68,8 @@ function RegisterScreen() {
               </div>
 
               {message && <Error>{message}</Error>}
+              {success && <SuccessNotification>New user created successfully!</SuccessNotification>}
+              {sitesError && <Error>{sitesError}</Error>}
               {error && <Error>{error}</Error>}
 
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
