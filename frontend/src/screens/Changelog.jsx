@@ -35,6 +35,7 @@ function Teams() {
                         <ul className="list-disc">
                             <li>Continue adding site functionality to register page</li>
                             <li>Restrict non-admin users to only see their site, admins can see all</li>
+                            <li>Reset register inputs after creating new user and show success notification</li>
                         </ul>
                     </Card>
                 </Sidebar>

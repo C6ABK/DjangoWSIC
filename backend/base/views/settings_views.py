@@ -14,3 +14,9 @@ def getSites(request):
     sites = Site.objects.all()
     serializer = SiteSerializer(sites, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def getSite(request, id):
+    sites = Site.objects.get(id=id)
+    serializer = SiteSerializer(sites, many=False)
+    return Response(serializer.data)

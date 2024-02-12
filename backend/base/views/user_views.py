@@ -11,7 +11,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
-from ..models import Site
+from ..models import Site, Profile
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -63,6 +63,8 @@ def registerUser(request):
             raise Exception
         if data['last_name'] == "":
             raise Exception
+        if data['userSite'] == "":
+            raise Exception
         if data['email'] == "":
             raise Exception
         if data['password'] == "":
@@ -81,6 +83,12 @@ def registerUser(request):
             password=make_password(data['password'])
         )
         serializer = UserSerializerWithToken(user, many=False)
+
+        profile = Profile.objects.create(
+            user = user,
+            site = data['userSite']
+        )
+
         return Response(serializer.data)
     except Exception as e:
         print(e)

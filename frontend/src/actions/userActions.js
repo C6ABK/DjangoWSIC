@@ -136,7 +136,7 @@ export const login = (email, password) => async(dispatch) => {
     }
 }
 
-export const register = (first_name, last_name, email, password) => async (dispatch) => {
+export const register = (first_name, last_name, userSite, email, password) => async (dispatch) => {
     try {
         dispatch({
             type: USER_REGISTER_REQUEST
@@ -150,7 +150,7 @@ export const register = (first_name, last_name, email, password) => async (dispa
 
         const { data } = await axios.post(
             '/api/users/register/',
-            { 'first_name': first_name, 'last_name': last_name, 'email': email, 'password': password},
+            { 'first_name': first_name, 'last_name': last_name, 'userSite': userSite, 'email': email, 'password': password},
             config
         )
 
@@ -158,13 +158,6 @@ export const register = (first_name, last_name, email, password) => async (dispa
             type: USER_REGISTER_SUCCESS,
             payload: data
         })
-
-        dispatch({
-            type: USER_LOGIN_SUCCESS,
-            payload: data
-        })
-
-        localStorage.setItem('userInfo', JSON.stringify(data))
 
     } catch (error) {
         dispatch({
