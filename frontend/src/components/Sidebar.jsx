@@ -110,18 +110,21 @@ export default function Sidebar({children, userInfo}) {
                                         to={"/rcps"}
                                     />
 
-                                    <SideBarLink 
-                                        icon={<Cog6ToothIcon />}
-                                        text={"Settings"}
-                                        to={"/settings"}
-                                    />
+                                    { (userInfo.staff !== undefined && userInfo.staff === true) && 
+                                    <>
+                                        <SideBarLink 
+                                            icon={<Cog6ToothIcon />}
+                                            text={"Settings"}
+                                            to={"/settings"}
+                                        />
 
-                                    <SideBarLink 
-                                        icon={<WrenchScrewdriverIcon />}
-                                        text={"Changelog"}
-                                        to={"/changelog"}
-                                    />
-                                    
+                                        <SideBarLink 
+                                            icon={<WrenchScrewdriverIcon />}
+                                            text={"Changelog"}
+                                            to={"/changelog"}
+                                        />
+                                    </>
+                                    }
                                 </ul>
                             </li>
 
@@ -185,7 +188,7 @@ export default function Sidebar({children, userInfo}) {
                                 to={"/rcps"}
                             />
                             
-                            { (userInfo.staff !== undefined && userInfo.staff == true) && 
+                            { (userInfo.staff !== undefined && userInfo.staff === true) && 
                                 <>
                                     <SideBarLink 
                                         icon={<Cog6ToothIcon />}
