@@ -25,11 +25,16 @@ function Teams() {
                 <Sidebar userInfo={userInfo}>
                     <Card>
                         <Page title="Changelog" />
-                        <ul>
+                        <ul className="list-disc">
                             <li>Master</li>
                             <li>Key Metrics</li>
                             <li>MG Product, HP KPIs, HP Hourly Count</li>
                             <li>Loss Data</li>
+                        </ul>
+
+                        <ul className="list-disc">
+                            <li>Continue adding site functionality to register page</li>
+                            <li>Restrict non-admin users to only see their site, admins can see all</li>
                         </ul>
                     </Card>
                 </Sidebar>

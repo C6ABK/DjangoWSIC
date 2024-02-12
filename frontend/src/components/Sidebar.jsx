@@ -185,7 +185,7 @@ export default function Sidebar({children, userInfo}) {
                                 to={"/rcps"}
                             />
                             
-                            {userInfo.staff && 
+                            { (userInfo.staff !== undefined && userInfo.staff == true) && 
                                 <>
                                     <SideBarLink 
                                         icon={<Cog6ToothIcon />}

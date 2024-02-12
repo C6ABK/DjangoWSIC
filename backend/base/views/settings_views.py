@@ -10,7 +10,6 @@ from rest_framework import status
 from ..models import Site
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def getSites(request):
     sites = Site.objects.all()
     serializer = SiteSerializer(sites, many=True)
