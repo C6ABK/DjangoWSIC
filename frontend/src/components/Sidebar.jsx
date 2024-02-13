@@ -14,12 +14,16 @@ import {
 
 import { useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/userActions'
 import SideBarLink from '../components/SideBarLink'
+import Loader from '../components/Loader'
  
-export default function Sidebar({children, userInfo, profileInfo}) {
+export default function Sidebar({children, userInfo}) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
+
+    const userProfile = useSelector(state => state.userProfile)
+    const { profileLoading, profileInfo } = userProfile
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -36,6 +40,7 @@ export default function Sidebar({children, userInfo, profileInfo}) {
 
   return (
     <>
+        {profileLoading ? <Loader /> :
         <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
@@ -133,7 +138,7 @@ export default function Sidebar({children, userInfo, profileInfo}) {
                                     <li>
                                         <NavLink to="/updateProfile" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                                             <UserCircleIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            {userInfo.first_name} {userInfo.last_name} {userInfo.staff}
+                                            {userInfo.first_name} {userInfo.last_name} - {profileInfo.site}
                                         </NavLink>
                                     </li>
 
@@ -203,9 +208,6 @@ export default function Sidebar({children, userInfo, profileInfo}) {
                                     />
                                 </>
                             }
-
-                            
-
                         </ul>
                     </li>
                     
@@ -245,6 +247,7 @@ export default function Sidebar({children, userInfo, profileInfo}) {
                 <div className="px-2 sm:px-4 lg:px-4">{children}</div>
             </main>
         </div>
+}
     </>
   )
 }

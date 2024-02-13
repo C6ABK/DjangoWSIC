@@ -53,8 +53,6 @@ export const getProfile = () => async (dispatch, getState) => {
             config
         )
 
-        alert(JSON.stringify(data))
-
         dispatch({
             type: PROFILE_LOAD_SUCCESS,
             payload: data

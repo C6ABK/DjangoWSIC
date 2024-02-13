@@ -12,9 +12,6 @@ function Dashboard() {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    const userProfile = useSelector(state => state.userProfile)
-    const { profileInfo } = userProfile
-
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -27,7 +24,7 @@ function Dashboard() {
     return (
         <>
             {userInfo && 
-                <Sidebar userInfo={userInfo} profileInfo={profileInfo}>
+                <Sidebar userInfo={userInfo}>
                     <Card>
                         <Page title="Dashboard" />
                         <Section title="Section Title" description="Blanditiis nostrum consectetur sint delectus culpa doloremque. Rerum tempore mollitia, provident laborum magni expedita corrupti obcaecati asperiores eum, voluptatibus assumenda autem quis." />
