@@ -3,5 +3,6 @@ from base.views import settings_views as views
 
 urlpatterns = [
     path('sites/', views.getSites, name="get-sites"),
-    path('site/<id>', views.getSite, name="get-site")
+    path('site/<id>', views.getSite, name="get-site"),
+    path('getProfile/<id>', views.getProfile, name="get-profile")
 ]

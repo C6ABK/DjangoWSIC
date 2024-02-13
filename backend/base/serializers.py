@@ -34,3 +34,11 @@ class SiteSerializer(serializers.ModelSerializer):
 
     def get_site(self, obj):
         return obj.id
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ['User', 'Site']
+
+    def get_userSite(self, obj):
+        return obj.Site
