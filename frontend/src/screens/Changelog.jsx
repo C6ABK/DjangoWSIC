@@ -34,9 +34,7 @@ function Teams() {
                         <br/>
                         <ul className="list-disc">
                             <li>Add site to update profile</li>
-                            <li>Add site to userInfo in store?</li>
                             <li>Restrict non-admin users to only see their site, admins can see all</li>
-                            <li>Reset register inputs after creating new user and show success notification</li>
                         </ul>
                     </Card>
                 </Sidebar>
