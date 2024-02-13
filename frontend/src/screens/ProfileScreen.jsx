@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
+import { getProfile } from '../actions/settingsActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 import Loader from '../components/Loader'
@@ -37,6 +38,7 @@ function ProfileScreen() {
             if(!user || !user.first_name || success){
                 dispatch({ type: USER_UPDATE_PROFILE_RESET })
                 dispatch(getUserDetails('profile'))
+                dispatch(getProfile())
             } else {
                 setFirst_name(userInfo.first_name)
                 setLast_name(userInfo.last_name)

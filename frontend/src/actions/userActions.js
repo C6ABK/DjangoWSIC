@@ -17,6 +17,12 @@ import {
     SHOW_UPDATE_MESSAGE
 } from '../constants/userConstants'
 
+import { 
+    PROFILE_LOGOUT
+} from '../constants/settingsConstants'
+
+import { getProfile } from './settingsActions'
+
 export const updateUserProfile = (user) => async (dispatch, getState) => {
     try {
         dispatch({
@@ -101,7 +107,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     }
 }
 
-export const login = (email, password) => async(dispatch, getState) => {
+export const login = (email, password) => async(dispatch) => {
     try {
         dispatch({
             type: USER_LOGIN_REQUEST
@@ -126,23 +132,7 @@ export const login = (email, password) => async(dispatch, getState) => {
 
         localStorage.setItem('userInfo', JSON.stringify(data))
 
-        const {
-            userLogin: {userInfo},
-        } = getState()
-
-        const profileConfig = {
-            headers: {
-                'Content-type': 'application/json',
-                Authorization: `Bearer ${userInfo.token}`
-            }
-        }
-
-        const {profile} = await axios.get(
-            `/api/settings/getProfile/${data["id"]}`,
-            profileConfig
-        )
-
-        localStorage.setItem('profileInfo', JSON.stringify(profile))
+        dispatch(getProfile())
 
     } catch(error) {
         dispatch({
@@ -189,6 +179,8 @@ export const register = (first_name, last_name, userSite, email, password) => as
  
 export const logout = () => (dispatch) => {
     localStorage.removeItem('userInfo')
+    localStorage.removeItem('profileInfo')
     dispatch({type: USER_LOGOUT})
+    dispatch({type: PROFILE_LOGOUT})
     dispatch({ type: USER_DETAILS_RESET })
 }

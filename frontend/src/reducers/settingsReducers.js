@@ -1,8 +1,31 @@
 import {
     SITES_LOAD_REQUEST,
     SITES_LOAD_SUCCESS,
-    SITES_LOAD_FAIL
+    SITES_LOAD_FAIL,
+    PROFILE_LOAD_REQUEST,
+    PROFILE_LOAD_SUCCESS,
+    PROFILE_LOAD_FAIL,
+    PROFILE_LOGOUT
 } from '../constants/settingsConstants'
+
+export const profileReducer = (state = {}, action) => {
+    switch (action.type) {
+        case PROFILE_LOAD_REQUEST:
+            return { profileLoading: true }
+
+        case PROFILE_LOAD_SUCCESS:
+            return { profileLoading: false, userProfile: action.payload }
+
+        case PROFILE_LOAD_FAIL:
+            return { profileLoading: false, error: action.payload }
+
+        case PROFILE_LOGOUT:
+            return {}
+
+        default:
+            return state
+    }
+}
 
 export const sitesListReducer = (state = { sites:[] }, action) => {
     switch(action.type){
@@ -19,12 +42,3 @@ export const sitesListReducer = (state = { sites:[] }, action) => {
             return state
     }
 }
-
-// export const userProfileReducer = (state = {}, action) => {
-//     switch(action.type) {
-//         case PROFILE_LOAD_REQUEST:
-//             return { profileLoading: true }
-        
-        
-//     }
-// }
