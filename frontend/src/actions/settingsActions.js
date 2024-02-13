@@ -9,17 +9,6 @@ export const listSites = () => async (dispatch) => {
     try {
         dispatch({ type: SITES_LOAD_REQUEST })
 
-        // const {
-        //     userLogin: {userInfo},
-        // } = getState()
-
-        // const config = {
-        //     headers: {
-        //         'Content-type': 'application/json',
-        //         Authorization: `Bearer ${userInfo.token}`
-        //     }
-        // }
-
         const { data } = await axios.get(
             `api/settings/sites/`
         )
@@ -38,3 +27,7 @@ export const listSites = () => async (dispatch) => {
         })
     }
 }
+
+// export const getProfile = () => async (dispatch) => {
+
+// }

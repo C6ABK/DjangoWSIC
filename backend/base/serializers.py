@@ -38,7 +38,7 @@ class SiteSerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['User', 'Site']
+        fields = ['user', 'site']
 
     def get_userSite(self, obj):
-        return obj.Site
+        return obj.site

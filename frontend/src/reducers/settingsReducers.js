@@ -19,3 +19,12 @@ export const sitesListReducer = (state = { sites:[] }, action) => {
             return state
     }
 }
+
+// export const userProfileReducer = (state = {}, action) => {
+//     switch(action.type) {
+//         case PROFILE_LOAD_REQUEST:
+//             return { profileLoading: true }
+        
+        
+//     }
+// }

@@ -101,7 +101,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     }
 }
 
-export const login = (email, password) => async(dispatch) => {
+export const login = (email, password) => async(dispatch, getState) => {
     try {
         dispatch({
             type: USER_LOGIN_REQUEST
@@ -125,6 +125,24 @@ export const login = (email, password) => async(dispatch) => {
         })
 
         localStorage.setItem('userInfo', JSON.stringify(data))
+
+        const {
+            userLogin: {userInfo},
+        } = getState()
+
+        const profileConfig = {
+            headers: {
+                'Content-type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`
+            }
+        }
+
+        const {profile} = await axios.get(
+            `/api/settings/getProfile/${data["id"]}`,
+            profileConfig
+        )
+
+        localStorage.setItem('profileInfo', JSON.stringify(profile))
 
     } catch(error) {
         dispatch({

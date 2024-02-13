@@ -22,8 +22,8 @@ def getSite(request, id):
     return Response(serializer.data)
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def getProfile(request, id):
-    profile = Profile.objects.get(id=id)
+    profile = Profile.objects.get(user=id)
     serializer = ProfileSerializer(profile, many=False)
     return Response(serializer.data)
