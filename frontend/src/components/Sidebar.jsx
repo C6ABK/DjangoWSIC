@@ -215,7 +215,7 @@ export default function Sidebar({children, userInfo}) {
                         <NavLink to="/updateProfile" className="flex items-center gap-x-4 px-6 py-3 group text-sm font-semibold leading-6 text-gray-700 hover:text-blue-600 hover:bg-gray-50">
                             <UserCircleIcon className='text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0' aria-hidden="true"/> 
                             <span className="sr-only">Your profile</span>
-                            <span aria-hidden="true">{userInfo.first_name} {userInfo.last_name} - {profileInfo.site}</span>
+                            <span aria-hidden="true">{userInfo.first_name} {userInfo.last_name} -{userInfo.createdAt} (SITE: {profileInfo.site})</span>
                         </NavLink>
 
                         <NavLink onClick={logoutHandler} className="flex items-center gap-x-4 px-6 py-3 group text-sm font-semibold leading-6 text-gray-700 hover:text-blue-600 hover:bg-gray-50">
