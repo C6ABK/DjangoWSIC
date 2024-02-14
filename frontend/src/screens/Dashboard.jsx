@@ -36,6 +36,7 @@ function Dashboard() {
                             <ul className="list-disc">
                                 <li>DJANGO DYNAMIC FOREIGN KEY</li>
                                 <li>CLARIFY DATA TYPES FOR MGPRODUCT MODEL</li>
+                                <li>Re-evaluate models for CASCADE vs SET_NULL - user Profile model as an example</li>
                                 <li>Remove the login debug profile message</li>
                                 <li>Log out "staff undefined" error</li>
                                 <li>Dodgy dashboard view or just old cached userInfo? profileInfo was assigned incorrectly so probably fixed.</li>
