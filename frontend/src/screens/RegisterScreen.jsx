@@ -32,6 +32,7 @@ function RegisterScreen() {
 
     useEffect(() => {
         dispatch(listSites())
+        document.title = "Create New User"
     }, [userInfo, navigate, dispatch])
 
     const submitHandler = (e) => {

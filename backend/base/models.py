@@ -80,9 +80,9 @@ class KeyMetric(models.Model):
     plant = models.ForeignKey(Plant, on_delete=models.SET_NULL, null=True)
     totalRTFTimeLoss = models.IntegerField(null=True, blank=True)
     totalSAPDamageUnits = models.IntegerField(null=True, blank=True)
-    SAPEfficiency = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
-    SAPYield = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
-    SAPDamage = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+    SAPEfficiency = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    SAPYield = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    SAPDamage = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     freshnessGaps = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
     warehouseGaps = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
     kronosCheck = models.BooleanField(null=True, blank=True)
@@ -147,4 +147,53 @@ class TeamManagerRecord(models.Model):
     def __str__(self):
         return str(self.user)
 
-    
+class Product(models.Model):
+    plant = models.ForeignKey(Plant, on_delete=models.SET_NULL, null=True)
+    name = models.CharField(max_length=9, null=False, blank=False)
+    productCode = models.CharField(max_length=9, null=False, blank=False)
+
+    def __str__(self):
+        return str(self.name)
+
+# CLARIFY DATA TYPES
+class MGProduct(models.Model):
+    keyMetric = models.ForeignKey(KeyMetric, on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    mixes = models.IntegerField(null=True, blank=True)
+    SAPDoughCount = models.IntegerField(null=False, blank=False)
+    pressure3A =  models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    pressure3B =  models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    vacuum3A =  models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    vacuum3B =  models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    lidSealA = models.BooleanField(null=True, blank=True)
+    lidSealB = models.BooleanField(null=True, blank=True)
+    dividerLevelSetPoint = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    yeastSOR = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    yeastEOR = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    avgDoughTemp = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    packagingScrapWeight = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    marshallingScrap = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    machineScrap = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    productionScrap = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    RTFStartTime = models.DateTimeField(null=True, blank=True)
+    RTFFinishTime = models.DateTimeField(null=True, blank=True)
+    gapTime = models.DateTimeField(null=True, blank=True)
+    RTFTimeLoss = models.IntegerField(null=False, blank=False)
+    SAPEfficiency = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    SAPYield = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    scalingWeight = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    standardDiv = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    water3A = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    water3B = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    avgHeightExOven = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    SAPFinishedGoodsCount = models.IntegerField(null=False, blank=False)
+    SORTime = models.DateTimeField(null=True, blank=True)
+    EORTime = models.DateTimeField(null=True, blank=True)
+    totalSAPDamagePacks = models.IntegerField(null=False, blank=False)
+    SAPDamage = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    avgHeightExCooler = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    avgDiameterExCooler = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.keyMetric)
+

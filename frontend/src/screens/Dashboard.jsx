@@ -17,7 +17,7 @@ function Dashboard() {
         if (!userInfo) {
             navigate("/login")
         }
-        document.title = "Development Tasks"
+        document.title = "Dashboard"
     }, [navigate, userInfo])
 
     return (
@@ -26,7 +26,7 @@ function Dashboard() {
                 <Sidebar userInfo={userInfo}>
                     <Card>
                         <Page title="Dashboard" />
-                        <Section title="Core Structure" description="Loss Data refers to the same table - everything is universal except the third layer which records plant specific information"/>
+                        <Section title="Core Structure" description="Loss Data refers to the same table - everything is universal except the B layer which records plant specific information"/>
                         <div className="px-4 pb-6">
                             <Structure />
                         </div>
@@ -35,7 +35,12 @@ function Dashboard() {
                         <div className="px-4 pb-6">
                             <ul className="list-disc">
                                 <li>DJANGO DYNAMIC FOREIGN KEY</li>
+                                <li>CLARIFY DATA TYPES FOR MGPRODUCT MODEL</li>
+                                <li>Remove the login debug profile message</li>
+                                <li>Log out "staff undefined" error</li>
+                                <li>Dodgy dashboard view or just old cached userInfo? profileInfo was assigned incorrectly so probably fixed.</li>
                                 <li>User to initialise new day if Master record doesn't exist (message to confirm)</li>
+                                <li>Determine proper app name & assign each document title on every page (append a master variable?)</li>
                                 <li>Searchable date text box to load a particular day</li>
                                 <li>Buttons to cycle through dates - yesterday, tomorrow</li>
                                 <li>Key Metrics basic input</li>

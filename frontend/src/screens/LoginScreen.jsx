@@ -24,6 +24,7 @@ function LoginScreen() {
         if (userInfo) {
             navigate("/")
         }
+        document.title = "Sign In"
     }, [userInfo, navigate])
 
     const submitHandler = (e) => {

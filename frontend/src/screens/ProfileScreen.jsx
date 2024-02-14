@@ -45,6 +45,7 @@ function ProfileScreen() {
                 setEmail(userInfo.email)
             }
         }
+        document.title = "Update Profile"
     }, [dispatch, navigate, userInfo, user, success])
 
     const submitHandler = (e) => {
