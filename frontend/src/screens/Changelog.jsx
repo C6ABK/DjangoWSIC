@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 import Card from '../components/Card'
 import { Page, Section } from '../components/Headings'
+import Structure from '../components/Structure'
 
 function Teams() {
     const userLogin = useSelector(state => state.userLogin)
@@ -25,14 +26,9 @@ function Teams() {
                 <Sidebar userInfo={userInfo}>
                     <Card>
                         <Page title="Development Tasks" />
-                        <Section title="Core Structure" />
+                        <Section title="Core Structure" description="Loss Data refers to the same table - everything is universal except the third layer which records plant specific information"/>
                         <div className="px-4 pb-6">
-                            <ol className="list-num">
-                                <li>Master</li>
-                                <li>Key Metrics</li>
-                                <li>MG Product, HP KPIs, HP Hourly Count</li>
-                                <li>Loss Data</li>
-                            </ol>
+                            <Structure />
                         </div>
                         
                         <Section title="High Priority" description="Implement core functionality for Morning Goods, simple components for relevant support tables."/>

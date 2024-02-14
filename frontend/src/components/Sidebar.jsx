@@ -125,7 +125,7 @@ export default function Sidebar({children, userInfo}) {
 
                                         <SideBarLink 
                                             icon={<WrenchScrewdriverIcon />}
-                                            text={"Dev"}
+                                            text={"Development Tasks"}
                                             to={"/changelog"}
                                         />
                                     </>
@@ -203,7 +203,7 @@ export default function Sidebar({children, userInfo}) {
 
                                     <SideBarLink 
                                         icon={<WrenchScrewdriverIcon />}
-                                        text={"Dev"}
+                                        text={"Development Tasks"}
                                         to={"/changelog"}
                                     />
                                 </>
