@@ -8,7 +8,6 @@ import {
   XMarkIcon,
   UserCircleIcon,
   ArrowRightEndOnRectangleIcon,
-  WrenchScrewdriverIcon,
   Cog6ToothIcon
 } from '@heroicons/react/24/outline'
 
@@ -122,12 +121,6 @@ export default function Sidebar({children, userInfo}) {
                                             text={"Settings"}
                                             to={"/settings"}
                                         />
-
-                                        <SideBarLink 
-                                            icon={<WrenchScrewdriverIcon />}
-                                            text={"Development Tasks"}
-                                            to={"/changelog"}
-                                        />
                                     </>
                                     }
                                 </ul>
@@ -201,11 +194,6 @@ export default function Sidebar({children, userInfo}) {
                                         to={"/settings"}
                                     />
 
-                                    <SideBarLink 
-                                        icon={<WrenchScrewdriverIcon />}
-                                        text={"Development Tasks"}
-                                        to={"/changelog"}
-                                    />
                                 </>
                             }
                         </ul>

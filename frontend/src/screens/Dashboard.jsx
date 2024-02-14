@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 import Sidebar from '../components/Sidebar'
 import Card from '../components/Card'
-import Stats from '../components/Stats'
 import { Page, Section } from '../components/Headings'
-import { Error, Success, Info } from '../components/Message'
+import Structure from '../components/Structure'
 
 function Dashboard() {
     const userLogin = useSelector(state => state.userLogin)
@@ -18,7 +17,7 @@ function Dashboard() {
         if (!userInfo) {
             navigate("/login")
         }
-        document.title = "Dashboard"
+        document.title = "Development Tasks"
     }, [navigate, userInfo])
 
     return (
@@ -27,12 +26,35 @@ function Dashboard() {
                 <Sidebar userInfo={userInfo}>
                     <Card>
                         <Page title="Dashboard" />
-                        <Section title="Section Title" description="Blanditiis nostrum consectetur sint delectus culpa doloremque. Rerum tempore mollitia, provident laborum magni expedita corrupti obcaecati asperiores eum, voluptatibus assumenda autem quis." />
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis nostrum consectetur sint delectus culpa doloremque. Rerum tempore mollitia, provident laborum magni expedita corrupti obcaecati asperiores eum, voluptatibus assumenda autem quis.
-                        <Stats />
-                        <Error>This is an error message</Error>
-                        <Success>This is a success message</Success>
-                        <Info>This is an information message</Info>
+                        <Section title="Core Structure" description="Loss Data refers to the same table - everything is universal except the third layer which records plant specific information"/>
+                        <div className="px-4 pb-6">
+                            <Structure />
+                        </div>
+                        
+                        <Section title="High Priority" description="Implement core functionality for Morning Goods, simple components for relevant support tables."/>
+                        <div className="px-4 pb-6">
+                            <ul className="list-disc">
+                                <li>DJANGO DYNAMIC FOREIGN KEY</li>
+                                <li>User to initialise new day if Master record doesn't exist (message to confirm)</li>
+                                <li>Searchable date text box to load a particular day</li>
+                                <li>Buttons to cycle through dates - yesterday, tomorrow</li>
+                                <li>Key Metrics basic input</li>
+                                <li>MG Product</li>
+                                <li>Loss Data</li>
+                            </ul>
+                        </div>
+
+                        <Section title="Planned" />
+                        <div className="px-4 pb-6">
+                            <ul className="list-disc">
+                                <li>Add site to update profile</li>
+                                <li>Load site name based on ID</li>
+                                <li>Restrict non-admin users to only see their site, admins can see all</li>
+                                <li>Revisit Corrective Actions model - Owner field can't just be User? (allow "Production" or department?) - multiple foreign keys?</li>
+                                <li>Financial calendar alert when coming to end - just ask whether next year is 4 or 5 week P13 (unless able to figure out?)</li>
+                                <li>Logo slow to load - use Photoshop to get a collection of various different sized ones, single W logo too.</li>
+                            </ul>
+                        </div>
                     </Card>
                 </Sidebar>
             }
