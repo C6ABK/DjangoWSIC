@@ -155,7 +155,23 @@ class Product(models.Model):
     def __str__(self):
         return str(self.name)
 
-# CLARIFY DATA TYPES
+class HPHourlyCount(models.Model):
+    keyMetric = models.ForeignKey(KeyMetric, on_delete=models.SET_NULL, null=True)
+    shift = models.ForeignKey(Shift, on_delete=models.SET_NULL, null=True)
+    line = models.IntegerField(null=True, blank=True)
+    count = models.IntegerField(null=True, blank=True)
+    runTime = models.IntegerField(null=True, blank=True)
+    downtime = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return str(self.keyMetric)
+
+class HPKPI(models.Model):
+    keyMetric = models.ForeignKey(KeyMetric, on_delete=models.SET_NULL, null=True)
+    line = models.IntegerField(null=True, blank=True)
+    timeLoss = models.IntegerField(null=True, blank=True)
+    
+
 class MGProduct(models.Model):
     keyMetric = models.ForeignKey(KeyMetric, on_delete=models.SET_NULL, null=True)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
@@ -196,4 +212,3 @@ class MGProduct(models.Model):
 
     def __str__(self):
         return str(self.keyMetric)
-
