@@ -34,7 +34,6 @@ function Dashboard() {
                         <Section title="High Priority" description="Implement core functionality for Morning Goods, simple components for relevant support tables."/>
                         <div className="px-4 pb-6">
                             <ul className="list-disc">
-                                <li>DJANGO DYNAMIC FOREIGN KEY</li>
                                 <li>CLARIFY DATA TYPES FOR MGPRODUCT MODEL</li>
                                 <li>Re-evaluate models for CASCADE vs SET_NULL - user Profile model as an example</li>
                                 <li>Remove the login debug profile message</li>
