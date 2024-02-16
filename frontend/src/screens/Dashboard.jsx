@@ -39,7 +39,6 @@ function Dashboard() {
                                 <li>Re-evaluate models for CASCADE vs SET_NULL - user Profile model as an example</li>
                                 <li>Remove the login debug profile message</li>
                                 <li>Log out "staff undefined" error</li>
-                                <li>Dodgy dashboard view or just old cached userInfo? profileInfo was assigned incorrectly so probably fixed.</li>
                                 <li>User to initialise new day if Master record doesn't exist (message to confirm)</li>
                                 <li>Determine proper app name & assign each document title on every page (append a master variable?)</li>
                                 <li>Searchable date text box to load a particular day</li>
