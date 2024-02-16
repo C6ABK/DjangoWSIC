@@ -34,7 +34,6 @@ function Dashboard() {
                         <Section title="High Priority" description="Implement core functionality for Morning Goods, simple components for relevant support tables."/>
                         <div className="px-4 pb-6">
                             <ul className="list-disc">
-                                <li>Re-evaluate models for CASCADE vs SET_NULL - user Profile model as an example</li>
                                 <li>Remove the login debug profile message</li>
                                 <li>Log out "staff undefined" error</li>
                                 <li>User to initialise new day if Master record doesn't exist (message to confirm)</li>
