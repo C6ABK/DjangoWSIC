@@ -21,7 +21,7 @@ class Plant(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.plantName
+        return str(self.siteID) + " - " + str(self.plantName)
 
 class Department(models.Model):
     plantID = models.ForeignKey(Plant, on_delete=models.SET_NULL, null=True)
@@ -30,7 +30,7 @@ class Department(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.departmentName
+        return str(self.plantID) + " - " + str(self.departmentName)
 
 class Shift(models.Model):
     departmentID = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True)
@@ -39,7 +39,7 @@ class Shift(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.shiftName
+        return str(self.departmentID) + " - " + str(self.shiftName) + " shift"
 
 class Asset(models.Model):
     site = models.ForeignKey(Site, on_delete=models.SET_NULL, null=True)
@@ -92,7 +92,7 @@ class KeyMetric(models.Model):
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.productionDate) + " - (" + str(self.plant) + ")"
+        return str(self.id) + " - " + str(self.productionDate) + " - (" + str(self.plant) + ")"
 
 # Just hard code the time of day values into the frontend dropdown
 class LabourControl(models.Model):
