@@ -170,7 +170,16 @@ class HPKPI(models.Model):
     keyMetric = models.ForeignKey(KeyMetric, on_delete=models.SET_NULL, null=True)
     line = models.IntegerField(null=True, blank=True)
     timeLoss = models.IntegerField(null=True, blank=True)
-    
+    accountedDamage = models.IntegerField(null=True, blank=True)
+    machineStoppage = models.IntegerField(null=True, blank=True)
+    boardBrushUsed = models.BooleanField(null=True, blank=True)
+    oilSetPoint = models.IntegerField(null=True, blank=True)
+    productWeight = models.IntegerField(null=True, blank=True)
+    sealFailures = models.BooleanField(null=True, blank=True)
+    MPDetectorWorking = models.BooleanField(null=True, blank=True)
+
+    def __str__(self):
+        return str(self.keyMetric)
 
 class MGProduct(models.Model):
     keyMetric = models.ForeignKey(KeyMetric, on_delete=models.SET_NULL, null=True)
@@ -212,3 +221,4 @@ class MGProduct(models.Model):
 
     def __str__(self):
         return str(self.keyMetric)
+
