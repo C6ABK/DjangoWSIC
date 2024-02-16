@@ -47,6 +47,7 @@ function Dashboard() {
                                 <li>Key Metrics basic input</li>
                                 <li>MG Product</li>
                                 <li>Loss Data</li>
+                                <li>API views in sidebar</li>
                             </ul>
                         </div>
 

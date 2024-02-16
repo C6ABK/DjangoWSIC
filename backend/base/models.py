@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import timedelta
 from django.utils import timezone
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 class Site(models.Model):
     siteName = models.CharField(max_length=200, null=False, blank=False)
@@ -149,7 +151,7 @@ class TeamManagerRecord(models.Model):
 
 class Product(models.Model):
     plant = models.ForeignKey(Plant, on_delete=models.SET_NULL, null=True)
-    name = models.CharField(max_length=9, null=False, blank=False)
+    name = models.CharField(max_length=200, null=False, blank=False)
     productCode = models.CharField(max_length=9, null=False, blank=False)
 
     def __str__(self):
@@ -221,4 +223,10 @@ class MGProduct(models.Model):
 
     def __str__(self):
         return str(self.keyMetric)
+
+class LossData(models.Model):
+    timeLoss = models.PositiveIntegerField(null=True, blank=True)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField(null=False, blank=False)
+    content_object = GenericForeignKey('content_type', 'object_id')
 
