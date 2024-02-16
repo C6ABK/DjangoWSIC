@@ -35,7 +35,6 @@ function Dashboard() {
                         <div className="px-4 pb-6">
                             <ul className="list-disc">
                                 <li>Remove the login debug profile message</li>
-                                <li>Log out "staff undefined" error</li>
                                 <li>User to initialise new day if Master record doesn't exist (message to confirm)</li>
                                 <li>Determine proper app name & assign each document title on every page (append a master variable?)</li>
                                 <li>Searchable date text box to load a particular day</li>
@@ -51,6 +50,7 @@ function Dashboard() {
                         <Section title="Planned" />
                         <div className="px-4 pb-6">
                             <ul className="list-disc">
+                                <li>Log out "staff undefined" error</li>
                                 <li>Add site to update profile</li>
                                 <li>Load site name based on ID</li>
                                 <li>Restrict non-admin users to only see their site, admins can see all</li>
