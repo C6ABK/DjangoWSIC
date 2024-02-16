@@ -48,6 +48,7 @@ function Dashboard() {
                                 <li>MG Product</li>
                                 <li>Loss Data</li>
                                 <li>API views in sidebar</li>
+                                <li>Loading React favicon before custom W?</li>
                             </ul>
                         </div>
 
