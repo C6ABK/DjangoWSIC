@@ -27,7 +27,5 @@ def getProfile(request):
     userReq = request.user
     profile = Profile.objects.get(user=userReq.id)
 
-    print("PROFILE!")
-
     serializer = ProfileSerializer(profile, many=False)
     return Response(serializer.data)

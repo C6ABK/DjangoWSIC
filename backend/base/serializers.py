@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Site, Profile
+from .models import Site, Profile, KeyMetric
 
 class UserSerializer(serializers.ModelSerializer):
     staff = serializers.SerializerMethodField(read_only=True)
@@ -42,3 +42,11 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def get_userSite(self, obj):
         return obj.site
+
+class KeyMetricSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = KeyMetric
+        fields = '__all__'
+
+    def get_keyMetric(self, obj):
+        return str(self.productionDate)
