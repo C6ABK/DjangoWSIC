@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 import Sidebar from '../../components/Sidebar'
 import Card from '../../components/Card'
-import KeyMetrics from '../../components/SIC/KeyMetrics'
+import KeyMetrics from '../../components/Demo/KeyMetrics'
 
 function MorningGoods() {
     const userLogin = useSelector(state => state.userLogin)
