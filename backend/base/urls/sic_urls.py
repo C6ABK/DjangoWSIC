@@ -5,4 +5,5 @@ urlpatterns = [
     path('keymetrics/', views.getKeyMetrics, name="get-key-metrics"),
     path('keymetric/<str:pk>', views.getKeyMetric, name="get-key-metric"),
     path('keymetric/<str:pk>/update/', views.updateKeyMetric, name="update-key-metric"),
+    path('keymetric/create/', views.createKeyMetric, name="create-key-metric"),
 ]

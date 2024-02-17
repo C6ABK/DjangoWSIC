@@ -57,6 +57,7 @@ function Dashboard() {
                                 <li>Revisit Corrective Actions model - Owner field can't just be User? (allow "Production" or department?) - multiple foreign keys?</li>
                                 <li>Financial calendar alert when coming to end - just ask whether next year is 4 or 5 week P13 (unless able to figure out?)</li>
                                 <li>Logo slow to load - use Photoshop to get a collection of various different sized ones, single W logo too.</li>
+                                <li>Activity log</li>
                             </ul>
                         </div>
                     </Card>
