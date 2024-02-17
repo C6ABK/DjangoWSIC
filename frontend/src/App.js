@@ -4,7 +4,8 @@ import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import Dashboard from './screens/Dashboard'
-import SICScreen from './screens/SIC/SICScreen'
+import MorningGoods from './screens/SIC/MorningGoods'
+import Hotplate from './screens/SIC/Hotplate'
 import RCPSScreen from './screens/RCPS/RCPSScreen'
 import SettingsScreen from './screens/SettingsScreen'
 
@@ -23,7 +24,8 @@ function App() {
                     <Route path="/login" element={<LoginScreen />} />
                     <Route path="/register" element={<RegisterScreen />} />
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/sic" element={<SICScreen />} />
+                    <Route path="/mgsic" element={<MorningGoods />} />
+                    <Route path="/hpsic" element={<Hotplate />} />
                     <Route path="/rcps" element={<RCPSScreen />} />
                     <Route path="/settings" element={<SettingsScreen />} />
                     <Route path="/updateProfile" element={<ProfileScreen />} />
