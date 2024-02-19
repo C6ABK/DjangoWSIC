@@ -16,7 +16,7 @@ function Hotplate() {
         if (!userInfo) {
             navigate("/login")
         }
-        document.title = "Hotplate SIC"
+        document.title = "SIC - Hotplate"
     }, [navigate, userInfo])
 
     return (

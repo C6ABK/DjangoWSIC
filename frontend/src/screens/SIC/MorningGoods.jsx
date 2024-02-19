@@ -16,7 +16,7 @@ function MorningGoods() {
         if (!userInfo) {
             navigate("/login")
         }
-        document.title = "Morning Goods SIC"
+        document.title = "SIC - Morning Goods"
     }, [navigate, userInfo])
 
     return (
