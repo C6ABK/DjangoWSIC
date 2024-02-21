@@ -1,9 +1,21 @@
+import { PencilSquareIcon } from "@heroicons/react/24/outline";
+import { NavLink } from "react-router-dom";
+
 function Quality() {
   return (
-    <div className="flex-col w-full lg:w-2/5 xl:w-1/5 border-2 border-gray-300 px-4 rounded-lg mt-4">
-      <div className="text-xs font-bold text-gray-900 my-2 xl:text-sm">
-        Quality
+    <div className="flex-col w-full lg:w-2/5 xl:w-1/5 border-2 border-gray-300 pl-4 rounded-lg mt-4">
+      <div className="flex justify-between">
+        <div className="text-xs font-bold text-gray-900 my-2 xl:text-sm">
+          Quality
+        </div>
+        <NavLink
+          to="/quality"
+          className="flex items-center justify-center p-2 m-2 rounded-md bg-blue-600  font-semibold text-white hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+        >
+          <PencilSquareIcon className="h-3 w-3 text-white" />
+        </NavLink>
       </div>
+F
       <div className="mt-2 flow-root">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -49,7 +61,6 @@ function Quality() {
                     80.75%
                   </td>
                 </tr>
-
               </tbody>
             </table>
           </div>

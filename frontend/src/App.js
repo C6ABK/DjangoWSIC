@@ -8,6 +8,7 @@ import MorningGoods from './screens/SIC/MorningGoods'
 import Hotplate from './screens/SIC/Hotplate'
 import RCPSScreen from './screens/RCPS/RCPSScreen'
 import SettingsScreen from './screens/SettingsScreen'
+import QualityScreen from './screens/QualityScreen'
 
 import Header from './components/Header'
 import ProfileScreen from './screens/ProfileScreen'
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/mgsic" element={<MorningGoods />} />
                     <Route path="/hpsic" element={<Hotplate />} />
                     <Route path="/rcps" element={<RCPSScreen />} />
+                    <Route path="/quality" element={<QualityScreen />} />
                     <Route path="/settings" element={<SettingsScreen />} />
                     <Route path="/updateProfile" element={<ProfileScreen />} />
                     <Route path="*" element={<NotFound />} />

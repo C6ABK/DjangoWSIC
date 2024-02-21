@@ -8,7 +8,8 @@ import {
   XMarkIcon,
   UserCircleIcon,
   ArrowRightEndOnRectangleIcon,
-  Cog6ToothIcon
+  Cog6ToothIcon,
+  TrophyIcon
 } from '@heroicons/react/24/outline'
 
 import { useEffect } from 'react'
@@ -203,6 +204,12 @@ export default function Sidebar({children, userInfo}) {
                                 icon={<MagnifyingGlassIcon />}
                                 text={"Root Cause Problem Solving"}
                                 to={"/rcps"}
+                            />
+
+                            <SideBarLink 
+                                icon={<TrophyIcon />}
+                                text={"Quality"}
+                                to={"/quality"}
                             />
                             
                             { (userInfo.staff !== undefined && userInfo.staff === true) && 
