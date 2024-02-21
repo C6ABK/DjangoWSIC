@@ -2,6 +2,7 @@ function AddProduct() {
     return (
       <div className="flex w-full ">
         <div className="flex flex-col w-full justify-end lg:flex-row space-x-0 lg:space-x-4">
+            <div className="text-3xl font-bold text-red-500">MOVE THIS</div>
           <select
             name="yesno"
             id="yesno"

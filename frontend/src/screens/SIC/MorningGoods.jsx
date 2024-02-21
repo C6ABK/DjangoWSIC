@@ -71,7 +71,8 @@ function MorningGoods() {
             <hr />
             <AddProduct />
             <hr />
-            <Product />
+            <Product product="Fruit Teacakes" />
+            <Product product="Large White Rolls" />
             {/* Products and losses here */}
           </Card>
         </Sidebar>
