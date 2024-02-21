@@ -10,6 +10,7 @@ import RCPS from "../../components/Demo/RCPS";
 import Health from "../../components/Demo/Health";
 import SAPPerformance from "../../components/Demo/SAPPerformance";
 import WPO from "../../components/Demo/WPO";
+import AddProduct from "../../components/Demo/AddProduct"
 import Product from "../../components/Demo/Product"
 
 import {
@@ -67,6 +68,8 @@ function MorningGoods() {
                 </button>
               </div>
             )}
+            <hr />
+            <AddProduct />
             <hr />
             <Product />
             {/* Products and losses here */}

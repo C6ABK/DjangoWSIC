@@ -12,7 +12,7 @@ function Input({...props}) {
           type="text"
           name="name"
           id="name"
-          className="peer text-center font-bold block w-full border-0 bg-gray-50 py-1.5 text-gray-900 focus:ring-0 sm:text-lg sm:leading-6"
+          className="peer text-center font-bold block w-full bg-transparent border-0 bg-gray-50 py-1.5 text-gray-900 focus:ring-0 sm:text-lg sm:leading-6"
           defaultValue={props.default}
         />
         <div
