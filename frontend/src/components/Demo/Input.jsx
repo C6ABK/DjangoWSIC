@@ -1,13 +1,13 @@
 function Input({...props}) {
   return (
-    <div>
+    <div className="h-full items-bottom">
       <label
         htmlFor="name"
-        className="block text-sm font-medium leading-6 text-gray-900"
+        className="block text-xs leading-6 text-gray-900"
       >
         {props.name}
       </label>
-      <div className="relative mt-2">
+      <div className="relative mt-2 align-bottom">
         <input
           type="text"
           name="name"

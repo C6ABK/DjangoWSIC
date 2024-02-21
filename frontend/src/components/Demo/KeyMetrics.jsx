@@ -19,7 +19,7 @@ function KeyMetrics() {
     }
 
     const datePicker = (e) => {
-        alert(e)
+        
     }
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function KeyMetrics() {
             <div className="flex mb-4">
                 <div className="flex flex-col w-5/6 text-gray-900 space-x-2 space-y-2">
                     <div className="text-xs">Production Date</div>
-                    <div className="font-bold text-sm md:text-4xl">{displayDate}</div>
+                    <div className="font-bold text-sm md:text-2xl">{displayDate}</div>
                 </div>
             
                 <div className="flex flex-col xl:w-1/6 space-x-2 space-y-2">
