@@ -1,5 +1,3 @@
-import { PencilSquareIcon } from "@heroicons/react/24/outline";
-import { NavLink } from "react-router-dom";
 import Input from "./Input";
 import Tile from "./Tile";
 

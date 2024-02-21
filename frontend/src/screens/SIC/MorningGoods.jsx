@@ -10,6 +10,7 @@ import RCPS from "../../components/Demo/RCPS";
 import Health from "../../components/Demo/Health";
 import SAPPerformance from "../../components/Demo/SAPPerformance";
 import WPO from "../../components/Demo/WPO";
+import Product from "../../components/Demo/Product"
 
 import {
   ChevronDoubleUpIcon,
@@ -60,14 +61,14 @@ function MorningGoods() {
               </>
             ) : (
               <div className="flex justify-center text-center py-2 text-gray-500">
-                <button className="flex space-x-4 items-center" onClick={keyMetricHandler}>
+                <button className="flex space-x-4 items-center text-xs" onClick={keyMetricHandler}>
                   <div>Show Key Metrics</div>
-                  <ChevronDoubleDownIcon className="w-8 h-8" />
+                  <ChevronDoubleDownIcon className="w-4 h-4" />
                 </button>
               </div>
             )}
             <hr />
-
+            <Product />
             {/* Products and losses here */}
           </Card>
         </Sidebar>
