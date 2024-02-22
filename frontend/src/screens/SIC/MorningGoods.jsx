@@ -73,7 +73,6 @@ function MorningGoods() {
 						<hr />
 						<AddProduct />
 
-						<hr />
 						<Product product='Fruit Teacakes' />
 						<Product product='Large White Rolls' />
 						<Product product='White Baps' />
