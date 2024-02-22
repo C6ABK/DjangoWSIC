@@ -31,7 +31,7 @@ export function OngoingLossRow({...props}) {
 
 export function ResolvedLossRow({...props}) {
     return (
-        <tr className="bg-emerald-500 text-gray-900">
+        <tr className="bg-emerald-500 text-white">
                   <td className="whitespace-nowrap px-3 py-4 text-xs ">
                     {props.asset}
                   </td>

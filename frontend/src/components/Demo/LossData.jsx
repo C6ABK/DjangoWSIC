@@ -69,7 +69,10 @@ function LossData() {
                     damage="300"
                 />
                 <ResolvedLossRow 
-                
+                    asset="Cooler"
+                    time="22/02/24 07:10"
+                    timeLoss="25"
+                    damage="0"
                 />
               </tbody>
             </table>
