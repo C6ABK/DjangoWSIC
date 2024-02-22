@@ -18,7 +18,7 @@ function Quality() {
           </div>
           <div className="flex text-xs w-full px-4">
             <div className="mx-4 w-1/2">
-              <Input default="0" />
+              <Input default="1" />
             </div>
             <div  className="mx-4 w-1/2">
               <Input default="0" />
@@ -33,7 +33,7 @@ function Quality() {
           </div>
           <div className="flex text-xs w-full px-4">
             <div className="mx-4 w-1/2">
-              <Input default="0" />
+              <Input default="3" />
             </div>
             <div  className="mx-4 w-1/2">
               <Input default="0" />

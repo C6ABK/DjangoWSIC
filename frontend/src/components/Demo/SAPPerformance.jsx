@@ -18,10 +18,10 @@ function SAPPerformance() {
           </div>
           <div className="flex text-xs w-full px-4">
             <div className="mx-4 w-1/2">
-              <Input default="0" />
+              <Input default="98.92%" />
             </div>
             <div className="mx-4 w-1/2">
-              <Input default="0" />
+              <Input default="13" />
             </div>
           </div>
         </div>
@@ -33,10 +33,10 @@ function SAPPerformance() {
           </div>
           <div className="flex text-xs w-full px-4">
             <div className="mx-4 w-1/2">
-              <Input default="0" />
+              <Input default="98.52%" />
             </div>
             <div className="mx-4 w-1/2">
-              <Input default="0" />
+              <Input default="1689" />
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ function SAPPerformance() {
           </div>
           <div className="flex text-xs w-full px-4">
             <div className="mx-4 w-1/2">
-              <Input default="0" />
+              <Input default="2.09%" />
             </div>
             <div className="mx-4 w-1/2">
               <Input default="0" />

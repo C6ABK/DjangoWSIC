@@ -19,10 +19,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="49" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="51156" />
               </div>
             </div>
           </div>
@@ -34,10 +34,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="0.50" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="0.54" />
               </div>
             </div>
           </div>
@@ -49,10 +49,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="-0.12" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="-0.55" />
               </div>
             </div>
           </div>
@@ -82,10 +82,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="4.2" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="4.2" />
               </div>
             </div>
           </div>
@@ -100,10 +100,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="02:25" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="05:48" />
               </div>
             </div>
           </div>
@@ -115,10 +115,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="00:35" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="-8" />
               </div>
             </div>
           </div>
@@ -130,10 +130,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="104.39%" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="99.43%" />
               </div>
             </div>
           </div>
@@ -145,10 +145,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="102" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="3.80" />
               </div>
             </div>
           </div>
@@ -161,10 +161,10 @@ function Product({ ...props }) {
             </div>
             <div className="flex text-xs w-full px-4">
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="61.5%" />
               </div>
               <div className="mx-4 w-1/2">
-                <Input default="0" />
+                <Input default="61.5%" />
               </div>
             </div>
           </div>
