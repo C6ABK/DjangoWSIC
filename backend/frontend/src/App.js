@@ -17,7 +17,7 @@ import NotFound from './screens/NotFound'
 function App() {
   return (
     <Router>
-        <div className="flex flex-col min-h-screen justify-between bg-orange-500">
+        <div className="flex flex-col min-h-screen justify-between bg-orange-100">
             <Header />
             <main className="mb-auto">      
                 <Routes>

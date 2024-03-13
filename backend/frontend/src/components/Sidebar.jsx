@@ -88,7 +88,7 @@ export default function Sidebar({children, userInfo}) {
                         <div className="flex h-16 shrink-0 items-center">
                             <img
                                 className="h-8 w-auto"
-                                src="/images/WarburtonsSmall.png"
+                                src={"/images/WarburtonsSmall.png"}
                                 alt="Warburtons"
                             />
                         </div>
@@ -142,7 +142,7 @@ export default function Sidebar({children, userInfo}) {
                                     <li>
                                         <NavLink to="/updateProfile" className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
                                             <UserCircleIcon className= "HomeIcon text-gray-400 group-hover:text-blue-600 h-6 w-6 shrink-0'" aria-hidden="true"/>
-                                            {userInfo.first_name} {userInfo.last_name} - {profileInfo.site}
+                                            {userInfo.first_name} {userInfo.last_name}
                                         </NavLink>
                                     </li>
 
@@ -170,7 +170,7 @@ export default function Sidebar({children, userInfo}) {
                 <div className="flex h-16 shrink-0 items-center">
                     <img
                         className="h-8 w-auto"
-                        src="/images/WarburtonsSmall.png"
+                        src={"/images/WarburtonsSmall.png"}
                         alt="Warburtons"
                     />
                 </div>
@@ -247,7 +247,7 @@ export default function Sidebar({children, userInfo}) {
             <div className="sticky top-0 z-40 flex justify-between items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
                 <img
                     className="h-8 w-auto"
-                    src="/images/WarburtonsSmall.png"
+                    src={"/images/WarburtonsSmall.png"}
                     alt="Warburtons"
                 />
 
