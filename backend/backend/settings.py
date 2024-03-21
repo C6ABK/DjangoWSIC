@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9dpqfso0%mtl*$t!yit+4e2655$k_p-9-g13br253x)j9f@5m!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -148,7 +148,7 @@ STATICFILES_DIRS = [
 ]
 
 
-MEDIA_ROOT = BASE_DIR / 'frontend/build/images'
+MEDIA_ROOT = 'static/images'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
